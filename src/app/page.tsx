@@ -34,7 +34,7 @@ export default function Home() {
   return (
     <>
       <DesktopContainer>
-        <BackgroundVector layout="fill" src="/bg.svg" alt="background" />
+        <BackgroundVector layout="fill" src="/bg.svg" alt="background" sizes="100vh" />
         <TopBottomContainer />
         <CenterContainer>
           <TitleArea>
