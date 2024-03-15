@@ -34,6 +34,7 @@ export default function Home() {
   return (
     <>
       <DesktopContainer>
+        <Background />
         <BackgroundVector layout="fill" src="/bg.svg" alt="background" sizes="100vh" />
         <TopBottomContainer />
         <CenterContainer>
@@ -132,14 +133,22 @@ const DesktopContainer = styled.div`
   width: 100vw;
   height: 100vh;
   position: relative;
-  background: linear-gradient(180deg, #000 0%, #2b0087 95.9%);
   display: flex;
   flex-direction: column;
   justify-content: space-around;
   align-items: center;
 `;
 
+const Background = styled.div`
+  background: linear-gradient(180deg, #000 0%, #2b0087 95.9%);
+  z-index: -2;
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+`;
+
 const BackgroundVector = styled(Image)`
+  z-index: -1;
   position: absolute;
   stroke-width: 1.085px;
   stroke: #fff;
