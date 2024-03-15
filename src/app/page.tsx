@@ -35,7 +35,7 @@ export default function Home() {
     <>
       <DesktopContainer>
         <Background />
-        <BackgroundVector layout="fill" src="/bg.svg" alt="background" sizes="100vh" />
+        <BackgroundVector fill={true} src="/bg.svg" alt="background" sizes="100vh" />
         <TopBottomContainer />
         <CenterContainer>
           <TitleArea>
