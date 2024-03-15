@@ -9,7 +9,6 @@ export const metadata: Metadata = {
     title: 'KSA Innovation Challenge 2024',
     description: 'KIC, Where passion meets purpose.',
     type: 'website',
-    locale: 'ko_KR',
     url: 'https://innovation-challenge.cloud.algorix.io',
     images: [
       {
@@ -19,7 +18,6 @@ export const metadata: Metadata = {
         alt: 'KSA Innovation Challenge 2024'
       }
     ]
-  },
   }
 };
 
