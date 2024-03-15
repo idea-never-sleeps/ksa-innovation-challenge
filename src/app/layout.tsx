@@ -4,7 +4,23 @@ import StyledComponentsRegistry from '@/lib/registry';
 
 export const metadata: Metadata = {
   title: 'KSA Innovation Challenge 2024',
-  description: 'KIC, Where passion meets purpose.'
+  description: 'KIC, Where passion meets purpose.',
+  openGraph: {
+    title: 'KSA Innovation Challenge 2024',
+    description: 'KIC, Where passion meets purpose.',
+    type: 'website',
+    locale: 'ko_KR',
+    url: 'https://innovation.migi.kim',
+    images: [
+      {
+        url: '/og.png',
+        width: 1200,
+        height: 630,
+        alt: 'KSA Innovation Challenge 2024'
+      }
+    ]
+  },
+  }
 };
 
 export default function RootLayout({
