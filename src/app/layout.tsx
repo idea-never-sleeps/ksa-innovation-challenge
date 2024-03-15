@@ -7,6 +7,7 @@ export const metadata: Metadata = {
   description: 'KIC, Where passion meets purpose.',
   metadataBase: new URL('https://innovation-challenge.cloud.algorix.io'),
   openGraph: {
+    siteName: 'KSA Innovation Challenge 2024',
     title: 'KSA Innovation Challenge 2024',
     description: 'KIC, Where passion meets purpose.',
     type: 'website',
