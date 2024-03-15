@@ -3,9 +3,10 @@
 import styled from 'styled-components';
 import Image from 'next/image';
 import { useEffect, useState } from 'react';
+import { happiness_sans, pretendard } from '@/lib/fonts';
 
 export default function Home() {
-  const [time, setTime] = useState('');
+  const [time, setTime] = useState('XX일 XX시간 XX분 XX초');
 
   const calculateTimeLeft = () => {
     const now = new Date();
@@ -20,7 +21,7 @@ export default function Home() {
     // add leading zero
     const pad = (n: number) => (n < 10 ? `0${n}` : n);
 
-    return `${pad(days)}:${pad(hours)}:${pad(minutes)}:${pad(seconds)}`;
+    return `${pad(days)}일 ${pad(hours)}시간 ${pad(minutes)}분 ${pad(seconds)}초`;
   };
 
   useEffect(() => {
@@ -31,89 +32,342 @@ export default function Home() {
   }, [time]);
 
   return (
-    <RootContainer>
-      <Container>
-        <Section className="between top">
-          <Title>
-            2024 KSA
+    <>
+      <DesktopContainer>
+        <BackgroundVector layout="fill" src="/bg.svg" alt="background" />
+        <TopBottomContainer />
+        <CenterContainer>
+          <TitleArea>
+            <SubTitle
+              className={happiness_sans.className}
+              style={{ marginBottom: '11px' }}
+            >
+              제 1회 한국과학영재학교 아이디어톤
+            </SubTitle>
+            <Title className={pretendard.className}>
+              KSA Innovation Challenge
+            </Title>
+          </TitleArea>
+          <CountdownArea>
+            <CountdownLabel className={happiness_sans.className}>
+              Application Form Open Countdown
+            </CountdownLabel>
+            <Countdown>{time}</Countdown>
+          </CountdownArea>
+          <Location>
+            5.4-5.6, 2박 3일, KSA 대강당.
             <br />
-            Innovation Challenge
-          </Title>
-          <Description>
-            2024. 03. 31. 23:59
-            <br />
-            Application From Open
-          </Description>
-        </Section>
-        <Section>
-          <Countdown>{time}</Countdown>
-        </Section>
-        <Section>
-          <Image
-            src="/oyunkwonisgod.svg"
-            alt="KSA/KAIST/과학기술정보통신부 로고"
-            width={400}
-            height={80}
-          />
-        </Section>
-      </Container>
-    </RootContainer>
+            KIC, Where <span className="bold">Passion</span> Meets{' '}
+            <span className="bold">Purpose</span>.
+          </Location>
+        </CenterContainer>
+        <AreaArea>
+          <TopBottomContainer>
+            <Association>
+              <span>주최</span>
+              <Image src="/ksa.svg" alt="KSA Logo" width="114" height="30" />
+            </Association>
+            <Association>
+              <span>주관</span>
+              <span className="content">2024 KIC 조직위원회</span>
+            </Association>
+            <Association>
+              <span>후원</span>
+              <AssociationImageGroup>
+                <Image
+                  src="/kaist.svg"
+                  alt="KAIST Logo"
+                  width="85"
+                  height="24"
+                />
+                <Image
+                  src="/ict.svg"
+                  alt="과학기술정보통신부 Logo"
+                  width="124"
+                  height="24"
+                />
+              </AssociationImageGroup>
+            </Association>
+          </TopBottomContainer>
+          <TopBottomShortContainerArea>
+            <TopBottomShortContainer>
+              <Association>
+                <span>주최</span>
+                <Image src="/ksa.svg" alt="KSA Logo" width="114" height="30" />
+              </Association>
+              <Association>
+                <span>주관</span>
+                <span className="content">2024 KIC 조직위원회</span>
+              </Association>
+            </TopBottomShortContainer>
+            <TopBottomShortContainerLineTwo>
+              <Association>
+                <span>후원</span>
+                <AssociationImageGroup>
+                  <Image
+                    src="/kaist.svg"
+                    alt="KAIST Logo"
+                    width="85"
+                    height="24"
+                  />
+                  <Image
+                    src="/ict.svg"
+                    alt="과학기술정보통신부 Logo"
+                    width="124"
+                    height="24"
+                  />
+                </AssociationImageGroup>
+              </Association>
+            </TopBottomShortContainerLineTwo>
+          </TopBottomShortContainerArea>
+        </AreaArea>
+        <AuthorContainer>Mingeon Kim @ 2024</AuthorContainer>
+      </DesktopContainer>
+    </>
   );
 }
 
-const RootContainer = styled.div`
+const DesktopContainer = styled.div`
+  color: #fff;
   width: 100vw;
   height: 100vh;
   position: relative;
-  background: linear-gradient(30deg, #000000, #0400db);
+  background: linear-gradient(180deg, #000 0%, #2b0087 95.9%);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+
+  /* @media (max-width: 768px) {
+    display: none;
+  } */
 `;
 
-const Container = styled.div`
-  color: white;
+// const MobileContainer = styled.div`
+//   color: #fff;
+//   width: 100vw;
+//   height: 100vh;
+//   position: relative;
+//   background: linear-gradient(0deg, #2b0087 0%, #000 100%);
+//   display: flex;
+//   flex-direction: column;
+//   justify-content: space-around;
+//   align-items: center;
+
+//   @media (min-width: 768px) {
+//     display: none;
+//   }
+// `;
+
+const BackgroundVector = styled(Image)`
+  position: absolute;
+  stroke-width: 1.085px;
+  stroke: #fff;
+  opacity: 0.58;
+  object-fit: cover;
+`;
+
+const CenterContainer = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+  height: 70%;
   justify-content: space-between;
-  width: 100%;
-  height: calc(100vh - 200px);
-  padding-top: 100px;
-  padding-bottom: 100px;
+  color: white;
 `;
 
-const Section = styled.div`
-  width: 70%;
+const TopBottomContainer = styled.div`
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  align-items: center;
+  width: 100%;
+
+  @media (max-width: 1250px) {
+    display: none;
+  }
+`;
+
+const TopBottomShortContainerArea = styled.div`
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
+  width: 100%;
+  margin-bottom: 20px;
+  gap: 12px;
 
-  &.top {
-    align-items: start;
-  }
-
-  &.between {
-    justify-content: space-between;
+  @media (min-width: 1250px) {
+    display: none;
   }
 `;
 
-const Title = styled.h1`
-  font-size: 40px;
-  font-weight: bold;
-  margin: 0;
+const AreaArea = styled.div`
+width: 70%;
+margin-bottom: 120px;
+
+@media (max-width: 768px) {
+  width: 100%;
+}
 `;
 
-const Description = styled.p`
+const TopBottomShortContainer = styled.div`
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  width: 100%;
+
+  @media (min-width: 1250px) {
+    display: none;
+  }
+`;
+
+const TopBottomShortContainerLineTwo = styled.div`
+  display: grid;
+  align-items: center;
+  width: 100%;
+
+  @media (min-width: 1250px) {
+    display: none;
+  }
+`;
+
+const Association = styled.div`
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  gap: 27px;
+
+  @media (max-width: 768px) {
+    gap: 15px;
+    }
+
+  & > span {
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 117.51%; /* 18.802px */
+    letter-spacing: -0.64px;
+
+    @media (max-width: 768px) {
+      font-size: 12px;
+      letter-spacing: -0.48px;
+    }
+
+    &.content {
+      font-size: 18px;
+      font-style: normal;
+      font-weight: 700;
+      line-height: 117.51%; /* 21.152px */
+      letter-spacing: -0.72px;
+
+      @media (max-width: 768px) {
+      font-size: 14px;
+      letter-spacing: -0.48px;
+    }
+    }
+  }
+`;
+
+const AssociationImageGroup = styled.div`
+  display: flex;
+  gap: 20px;
+`;
+
+const TitleArea = styled.div`
   display: flex;
   flex-direction: column;
-  justify-content: start;
-  align-items: end;
-  text-align: right;
-  font-size: 20px;
-  margin: 0;
+  align-items: center;
+  text-align: center;
+  margin-top: 80px;
 `;
 
-const Countdown = styled.div`
-  font-size: 80px;
+const SubTitle = styled.span`
+  font-size: 24px;
+  font-style: normal;
   font-weight: 700;
-  opacity: 0.5;
-  margin: 0;
+  line-height: 117.51%;
+  letter-spacing: -0.96px;
+`;
+
+const Title = styled.span`
+  font-size: 48px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 117.51%;
+  letter-spacing: -1.92px;
+  padding-left: 20px;
+  padding-right: 20px;
+`;
+
+const CountdownArea = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  margin-top: 40px;
+`;
+
+const CountdownLabel = styled.span`
+  text-align: center;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 117.51%; /* 28.202px */
+  letter-spacing: -0.96px;
+  @media (max-width: 1250px) {
+    letter-spacing: -1.12px;
+  }
+  @media (max-width: 768px) {
+    letter-spacing: -0.56px;
+    font-size: 16px;
+  }
+`;
+
+const Countdown = styled.span`
+  text-align: center;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 117.51%; /* 112.81px */
+  letter-spacing: -3.84px;
+
+  @media (min-width: 1250px) {
+    font-size: 96px;
+  }
+  @media (max-width: 1250px) {
+    font-size: 72px;
+    letter-spacing: -1.12px;
+  }
+  @media (max-width: 768px) {
+    letter-spacing: -0.56px;
+    font-size: 35px;
+  }
+`;
+
+const Location = styled.span`
+  text-align: center;
+  font-size: 30px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 117.51%; /* 35.253px */
+  letter-spacing: -1.2px;
+  margin-bottom: 40px;
+
+  & > span {
+    font-weight: 600;
+  }
+
+  @media (max-width: 768px) {
+    letter-spacing: -0.56px;
+    font-size: 20px;
+  }
+`;
+
+const AuthorContainer = styled.div`
+  position: absolute;
+  bottom: 0;
+  padding: 16px;
+  font-weight: 400;
+  font-size: 12px;
 `;
