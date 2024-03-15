@@ -10,7 +10,7 @@ export const metadata: Metadata = {
     description: 'KIC, Where passion meets purpose.',
     type: 'website',
     locale: 'ko_KR',
-    url: 'https://innovation.migi.kim',
+    url: 'https://innovation-challenge.cloud.algorix.io',
     images: [
       {
         url: '/og.png',
