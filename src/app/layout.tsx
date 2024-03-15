@@ -5,6 +5,7 @@ import StyledComponentsRegistry from '@/lib/registry';
 export const metadata: Metadata = {
   title: 'KSA Innovation Challenge 2024',
   description: 'KIC, Where passion meets purpose.',
+  metadataBase: new URL('https://innovation-challenge.cloud.algorix.io'),
   openGraph: {
     title: 'KSA Innovation Challenge 2024',
     description: 'KIC, Where passion meets purpose.',
