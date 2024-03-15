@@ -137,27 +137,7 @@ const DesktopContainer = styled.div`
   flex-direction: column;
   justify-content: space-around;
   align-items: center;
-
-  /* @media (max-width: 768px) {
-    display: none;
-  } */
 `;
-
-// const MobileContainer = styled.div`
-//   color: #fff;
-//   width: 100vw;
-//   height: 100vh;
-//   position: relative;
-//   background: linear-gradient(0deg, #2b0087 0%, #000 100%);
-//   display: flex;
-//   flex-direction: column;
-//   justify-content: space-around;
-//   align-items: center;
-
-//   @media (min-width: 768px) {
-//     display: none;
-//   }
-// `;
 
 const BackgroundVector = styled(Image)`
   position: absolute;
@@ -258,7 +238,7 @@ const Association = styled.div`
     &.content {
       font-size: 18px;
       font-style: normal;
-      font-weight: 700;
+      font-weight: 500;
       line-height: 117.51%; /* 21.152px */
       letter-spacing: -0.72px;
 
@@ -286,7 +266,7 @@ const TitleArea = styled.div`
 const SubTitle = styled.span`
   font-size: 24px;
   font-style: normal;
-  font-weight: 700;
+  font-weight: 600;
   line-height: 117.51%;
   letter-spacing: -0.96px;
 `;
@@ -294,7 +274,7 @@ const SubTitle = styled.span`
 const Title = styled.span`
   font-size: 48px;
   font-style: normal;
-  font-weight: 700;
+  font-weight: 600;
   line-height: 117.51%;
   letter-spacing: -1.92px;
   padding-left: 20px;
@@ -328,7 +308,7 @@ const CountdownLabel = styled.span`
 const Countdown = styled.span`
   text-align: center;
   font-style: normal;
-  font-weight: 700;
+  font-weight: 600;
   line-height: 117.51%; /* 112.81px */
   letter-spacing: -3.84px;
 
