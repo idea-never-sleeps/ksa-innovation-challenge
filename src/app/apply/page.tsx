@@ -3,7 +3,7 @@
 import { Widget } from '@typeform/embed-react';
 import styled from 'styled-components';
 
-export default function ApplyPage() {
+export default function ApplyClientPage() {
   return (
     <ApplyContainer>
       <Widget id="Yq9flzg4" fullScreen />
