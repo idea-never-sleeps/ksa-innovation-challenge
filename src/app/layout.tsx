@@ -2,7 +2,7 @@ import type { Metadata } from 'next';
 import { wanted_sans } from '@/lib/fonts';
 import StyledComponentsRegistry from '@/lib/registry';
 import './styles.css'
-import 'normalize.css';
+import 'normalize.css/normalize.css';
 
 export const metadata: Metadata = {
   title: 'KSA Innovation Challenge 2024',
