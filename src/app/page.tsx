@@ -274,7 +274,7 @@ const SubTitle = styled.span`
   font-weight: 600;
 
   @media (max-width: 768px) {
-    font-size: 16px;
+    font-size: 12px;
   }
 `;
 
@@ -286,7 +286,7 @@ const Title = styled.span`
   padding-right: 20px;
 
   @media (max-width: 768px) {
-    font-size: 28px;
+    font-size: 20px;
   }
 `;
 
@@ -306,7 +306,7 @@ const CountdownLabel = styled.span`
   @media (max-width: 1250px) {
   }
   @media (max-width: 768px) {
-    font-size: 20px;
+    font-size: 14px;
   }
 `;
 
@@ -323,7 +323,7 @@ const Countdown = styled.span`
     font-size: 45px;
   }
   @media (max-width: 768px) {
-    font-size: 35px;
+    font-size: 25px;
   }
 `;
 
@@ -343,7 +343,7 @@ const Location = styled.span`
   }
 
   @media (max-width: 768px) {
-    font-size: 18px;
+    font-size: 14px;
   }
 `;
 
