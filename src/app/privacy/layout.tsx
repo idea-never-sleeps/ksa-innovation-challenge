@@ -25,13 +25,19 @@ export default function PrivacyLayout({
 const RootContainer = styled.div`
   position: relative;
   overflow: hidden;
+  display: flex;
+  justify-content: center;
 `;
 
 const Container = styled.div`
   color: #fff;
-  padding: 40px 60px;
+  font-size: 14px;
+  padding: 40px;
+  max-width: 1200px;
   height: calc(100vh - 80px);
   overflow-y: scroll;
+  line-height: 1.5;
+  letter-spacing: -4%;
 `;
 
 const BackgroundColor = styled.div`
