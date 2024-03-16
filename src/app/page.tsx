@@ -279,14 +279,14 @@ const SubTitle = styled.span`
 `;
 
 const Title = styled.span`
-  font-size: 48px;
+  font-size: 40px;
   font-style: normal;
   font-weight: 600;
   padding-left: 20px;
   padding-right: 20px;
 
   @media (max-width: 768px) {
-    font-size: 32px;
+    font-size: 28px;
   }
 `;
 
@@ -329,7 +329,7 @@ const Countdown = styled.span`
 
 const Location = styled.span`
   text-align: center;
-  font-size: 30px;
+  font-size: 25px;
   font-style: normal;
   font-weight: 400;
   margin-bottom: 40px;
@@ -339,11 +339,11 @@ const Location = styled.span`
   }
 
   @media (max-width: 1250px) {
-    font-size: 24px;
+    font-size: 20px;
   }
 
   @media (max-width: 768px) {
-    font-size: 20px;
+    font-size: 18px;
   }
 `;
 
