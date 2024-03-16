@@ -323,7 +323,7 @@ const Countdown = styled.span`
     font-size: 45px;
   }
   @media (max-width: 768px) {
-    font-size: 25px;
+    font-size: 28px;
   }
 `;
 
