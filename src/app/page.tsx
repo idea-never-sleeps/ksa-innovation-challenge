@@ -122,7 +122,7 @@ export default function Home() {
             </TopBottomShortContainerLineTwo>
           </TopBottomShortContainerArea>
         </AreaArea>
-        <AuthorContainer>Mingeon Kim @ 2024</AuthorContainer>
+        <AuthorContainer>Copyright KIC 2024. All rights reserved.</AuthorContainer>
       </DesktopContainer>
     </>
   );
@@ -142,7 +142,7 @@ const DesktopContainer = styled.div`
 `;
 
 const Background = styled.div`
-  background: linear-gradient(180deg, #000 0%, #2b0087 95.9%);
+  background-color: #000;
   z-index: -2;
   position: absolute;
   width: 100vw;
