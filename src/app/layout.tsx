@@ -7,7 +7,7 @@ import 'normalize.css/normalize.css';
 export const metadata: Metadata = {
   title: 'KSA Innovation Challenge 2024',
   description: 'KIC, Where passion meets purpose.',
-  themeColor: "#ffffff",
+  themeColor: "#000000",
   metadataBase: new URL('https://innovation-challenge.cloud.algorix.io'),
   openGraph: {
     siteName: 'KSA Innovation Challenge 2024',
