@@ -130,6 +130,7 @@ export default function Home() {
 
 const DesktopContainer = styled.div`
   color: #fff;
+  box-sizing: border-box;
   width: 100vw;
   height: 100vh;
   height: 100svh;
