@@ -10,7 +10,7 @@ export default function Home() {
 
   const calculateTimeLeft = () => {
     const now = new Date();
-    const target = new Date('2024-03-31T23:59:00');
+    const target = new Date('2024-03-31T15:00:00');
 
     const diff = target.getTime() - now.getTime();
     const days = Math.floor(diff / (1000 * 60 * 60 * 24));
@@ -131,12 +131,14 @@ export default function Home() {
 const DesktopContainer = styled.div`
   color: #fff;
   width: 100vw;
+  height: 100dvh !important;
   height: 100vh;
   position: relative;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
   align-items: center;
+  letter-spacing: -4%;
 `;
 
 const Background = styled.div`
@@ -236,24 +238,18 @@ const Association = styled.div`
     font-size: 16px;
     font-style: normal;
     font-weight: 400;
-    line-height: 117.51%; /* 18.802px */
-    letter-spacing: -0.64px;
 
     @media (max-width: 768px) {
       font-size: 12px;
-      letter-spacing: -0.48px;
     }
 
     &.content {
       font-size: 18px;
       font-style: normal;
       font-weight: 500;
-      line-height: 117.51%; /* 21.152px */
-      letter-spacing: -0.72px;
 
       @media (max-width: 768px) {
       font-size: 14px;
-      letter-spacing: -0.48px;
     }
     }
   }
@@ -276,18 +272,22 @@ const SubTitle = styled.span`
   font-size: 24px;
   font-style: normal;
   font-weight: 600;
-  line-height: 117.51%;
-  letter-spacing: -0.96px;
+
+  @media (max-width: 768px) {
+    font-size: 16px;
+  }
 `;
 
 const Title = styled.span`
   font-size: 48px;
   font-style: normal;
   font-weight: 600;
-  line-height: 117.51%;
-  letter-spacing: -1.92px;
   padding-left: 20px;
   padding-right: 20px;
+
+  @media (max-width: 768px) {
+    font-size: 32px;
+  }
 `;
 
 const CountdownArea = styled.div`
@@ -303,14 +303,10 @@ const CountdownLabel = styled.span`
   font-size: 24px;
   font-style: normal;
   font-weight: 400;
-  line-height: 117.51%; /* 28.202px */
-  letter-spacing: -0.96px;
   @media (max-width: 1250px) {
-    letter-spacing: -1.12px;
   }
   @media (max-width: 768px) {
-    letter-spacing: -0.56px;
-    font-size: 16px;
+    font-size: 20px;
   }
 `;
 
@@ -318,18 +314,15 @@ const Countdown = styled.span`
   text-align: center;
   font-style: normal;
   font-weight: 600;
-  line-height: 117.51%; /* 112.81px */
-  letter-spacing: -3.84px;
+  margin-top: 10px;
 
   @media (min-width: 1250px) {
-    font-size: 96px;
+    font-size: 60px;
   }
   @media (max-width: 1250px) {
-    font-size: 72px;
-    letter-spacing: -1.12px;
+    font-size: 45px;
   }
   @media (max-width: 768px) {
-    letter-spacing: -0.56px;
     font-size: 35px;
   }
 `;
@@ -339,16 +332,17 @@ const Location = styled.span`
   font-size: 30px;
   font-style: normal;
   font-weight: 400;
-  line-height: 117.51%; /* 35.253px */
-  letter-spacing: -1.2px;
   margin-bottom: 40px;
 
   & > span {
     font-weight: 600;
   }
 
+  @media (max-width: 1250px) {
+    font-size: 24px;
+  }
+
   @media (max-width: 768px) {
-    letter-spacing: -0.56px;
     font-size: 20px;
   }
 `;
