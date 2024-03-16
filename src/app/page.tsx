@@ -131,10 +131,11 @@ export default function Home() {
 const DesktopContainer = styled.div`
   color: #fff;
   box-sizing: border-box;
+  position: relative;
   width: 100vw;
   height: 100vh;
   height: 100svh;
-  position: relative;
+  overflow-y: hidden;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
