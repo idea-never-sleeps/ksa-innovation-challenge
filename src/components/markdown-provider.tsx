@@ -36,7 +36,7 @@ const Container = styled.div`
   max-width: 1200px;
   box-sizing: border-box;
   height: 100vh;
-  height: -webkit-fill-available;
+  height: 100svh;
   overflow-y: scroll;
   line-height: 1.5;
   letter-spacing: -4%;
