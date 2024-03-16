@@ -132,7 +132,7 @@ const DesktopContainer = styled.div`
   color: #fff;
   width: 100vw;
   height: 100vh;
-  height: -webkit-fill-available;
+  height: 100svh;
   position: relative;
   display: flex;
   flex-direction: column;
