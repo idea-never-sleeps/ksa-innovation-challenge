@@ -3,11 +3,11 @@ import { wanted_sans } from '@/lib/fonts';
 import StyledComponentsRegistry from '@/lib/registry';
 import './styles.css'
 import 'normalize.css/normalize.css';
+import Head from 'next/head';
 
 export const metadata: Metadata = {
   title: 'KSA Innovation Challenge 2024',
   description: 'KIC, Where passion meets purpose.',
-  themeColor: "#000000",
   metadataBase: new URL('https://innovation-challenge.cloud.algorix.io'),
   openGraph: {
     siteName: 'KSA Innovation Challenge 2024',
@@ -33,6 +33,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="ko">
+      <Head>
+        <meta property="theme-color" content="#000000" />
+      </Head>
       <body className={wanted_sans.className} style={{ margin: 0, padding: 0 }}>
         <StyledComponentsRegistry>{children}</StyledComponentsRegistry>
       </body>
