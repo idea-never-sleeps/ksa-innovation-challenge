@@ -3,7 +3,6 @@ import ApplyClientPage from "./page";
 export const metadata = {
   title: '지원하기 - KSA Innovation Challenge 2024',
   description: 'KIC, Where passion meets purpose.',
-  themeColor: "#ffffff",
   openGraph: {
     siteName: 'KSA Innovation Challenge 2024',
     title: '지원하기 - KSA Innovation Challenge 2024',
