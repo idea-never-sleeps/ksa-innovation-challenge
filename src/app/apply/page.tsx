@@ -1,10 +1,19 @@
+'use client';
+
 import { Widget } from '@typeform/embed-react';
+import styled from 'styled-components';
 
 export default function ApplyPage() {
   return (
-    <Widget
-      id="01HS2Y0GA8DC3Y1V1A05SBWXWK"
-      style={{ width: '100%', height: '100vh' }}
-    />
+    <ApplyContainer>
+      <Widget id="Yq9flzg4" fullScreen />
+    </ApplyContainer>
   );
 }
+
+const ApplyContainer = styled.div`
+  width: 100vw;
+  height: 100dvh !important;
+  height: 100vh;
+  overflow: hidden;
+`;
