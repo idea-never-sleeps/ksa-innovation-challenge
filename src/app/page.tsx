@@ -131,8 +131,8 @@ export default function Home() {
 const DesktopContainer = styled.div`
   color: #fff;
   width: 100vw;
-  height: 100dvh !important;
   height: 100vh;
+  height: -webkit-fill-available;
   position: relative;
   display: flex;
   flex-direction: column;
