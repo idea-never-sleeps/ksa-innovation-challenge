@@ -34,7 +34,9 @@ const Container = styled.div`
   font-size: 14px;
   padding: 40px;
   max-width: 1200px;
-  height: calc(100vh - 80px);
+  box-sizing: border-box;
+  height: 100vh;
+  height: -webkit-fill-available;
   overflow-y: scroll;
   line-height: 1.5;
   letter-spacing: -4%;
