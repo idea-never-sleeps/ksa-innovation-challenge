@@ -43,16 +43,51 @@ export default function LandingPage() {
     [wheelDelta, percentage]
   );
 
+  const handleTouchEnd = useCallback(() => {
+    if (percentage > 100000) {
+      return;
+    }
+  
+    let animationFrameId: number | null = null;
+    let lastTimestamp = performance.now();
+    let initialVelocity = 0;
+  
+    const animateDeceleration = (timestamp: number) => {
+      const deltaTime = timestamp - lastTimestamp;
+      lastTimestamp = timestamp;
+  
+      // Calculate velocity based on deltaTime and initial velocity
+      initialVelocity -= initialVelocity * deltaTime * 0.001; // Adjust the deceleration factor as needed
+  
+      // Update percentage based on velocity
+      setPercentage((prev) => prev + initialVelocity);
+  
+      // Check if the velocity is close to zero
+      if (Math.abs(initialVelocity) < 0.1) {
+        cancelAnimationFrame(animationFrameId!);
+        return;
+      }
+  
+      // Request the next animation frame
+      animationFrameId = requestAnimationFrame(animateDeceleration);
+    };
+  
+    animateDeceleration(performance.now());
+  }, [percentage]);
+  
+
   useEffect(() => {
     window.addEventListener('wheel', (e) => handleWheel(e as WheelEvent));
     window.addEventListener('touchmove', (e) => handleTouch(e as TouchEvent));
+    window.addEventListener('touchend', handleTouchEnd);
     return () => {
       window.removeEventListener('wheel', (e) => handleWheel(e as WheelEvent));
       window.removeEventListener('touchmove', (e) =>
         handleTouch(e as TouchEvent)
       );
+      window.removeEventListener('touchend', handleTouchEnd);
     };
-  }, [handleWheel, handleTouch]);
+  }, [handleWheel, handleTouch, handleTouchEnd]);
 
   return (
     <RootContainer $scroll={scroll}>
