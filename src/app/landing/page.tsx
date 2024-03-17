@@ -9,19 +9,36 @@ export default function LandingPage() {
   const [percentage, setPercentage] = useState(0);
   const [wheelDelta, setWheelDelta] = useState(0);
 
+  const handleWheel = useCallback(
+    (e: WheelEvent) => {
+      if (wheelDelta < e.deltaY && e.deltaY > 0) {
+        setPercentage((prev) => prev + 60);
+      }
+      setWheelDelta(e.deltaY);
+    },
+    [wheelDelta]
+  );
 
-  const handleWheel = useCallback((e: WheelEvent) => {
-    if (wheelDelta < e.deltaY && e.deltaY > 0) {
-      setPercentage((prev) => prev + 60);
-    }
-    setWheelDelta(e.deltaY);
-  }, [wheelDelta]);
+  const handleTouch = useCallback(
+    (e: TouchEvent) => {
+      if (wheelDelta < e.touches[0].clientY && e.touches[0].clientY > 0) {
+        setPercentage((prev) => prev + 60);
+      }
+      setWheelDelta(e.touches[0].clientY);
+    },
+    [wheelDelta]
+  );
 
   useEffect(() => {
     window.addEventListener('wheel', (e) => handleWheel(e as WheelEvent));
-    return () =>
+    window.addEventListener('touchmove', (e) => handleTouch(e as TouchEvent));
+    return () => {
       window.removeEventListener('wheel', (e) => handleWheel(e as WheelEvent));
-  }, [handleWheel]);
+      window.removeEventListener('touchmove', (e) =>
+        handleTouch(e as TouchEvent)
+      );
+    };
+  }, [handleWheel, handleTouch]);
 
   return (
     <RootContainer>
@@ -39,7 +56,38 @@ export default function LandingPage() {
         <BottomContainer>
           <AssocationContainer>
             <span className="title">주최</span>
+            <AssociationLogo>
+              <Image
+                src="/ksa.svg"
+                alt="KSA Logo"
+                width="114"
+                height="30"
+                style={{ fill: 'black' }}
+              />
+            </AssociationLogo>
+          </AssocationContainer>
+          <AssocationContainer>
+            <span className="title">주관</span>
             <span className="content">2024 KIC 추진위원단</span>
+          </AssocationContainer>
+          <AssocationContainer>
+            <span className="title">후원</span>
+            <AssociationLogo>
+              <Image
+                src="/kaist.svg"
+                alt="KAIST Logo"
+                width="85"
+                height="24"
+                style={{ fill: 'black' }}
+              />
+              <Image
+                src="/ict.svg"
+                alt="과학기술정보통신부 Logo"
+                width="124"
+                height="24"
+                style={{ fill: 'black' }}
+              />
+            </AssociationLogo>
           </AssocationContainer>
         </BottomContainer>
       </TopContainer>
@@ -77,6 +125,7 @@ const TopTitle = styled.div`
   margin-top: 20px;
   margin-right: 20px;
   font-weight: 600;
+  font-size: 30px;
   text-align: right;
 `;
 
