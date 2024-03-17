@@ -288,7 +288,7 @@ const SubTitle = styled.span`
 const Title = styled.span`
   font-size: 40px;
   font-style: normal;
-  font-weight: 500;
+  font-weight: 600;
   padding-left: 20px;
   padding-right: 20px;
 
@@ -320,7 +320,7 @@ const CountdownLabel = styled.span`
 const Countdown = styled.span`
   text-align: center;
   font-style: normal;
-  font-weight: 500;
+  font-weight: 600;
   margin-top: 10px;
 
   @media (min-width: 1250px) {
@@ -342,7 +342,7 @@ const Location = styled.span`
   margin-bottom: 40px;
 
   & > span {
-    font-weight: 500;
+    font-weight: 600;
   }
 
   @media (max-width: 1250px) {
