@@ -198,7 +198,7 @@ const TopTitle = styled.div`
   text-align: right;
 
   @media (max-width: 768px) {
-    transform: scale(0.3);
+    font-size: 14px;
   }
 `;
 
@@ -233,7 +233,16 @@ const AssocationContainer = styled.div`
     font-size: 20px;
   }
   @media (max-width: 768px) {
-    transform: scale(0.6);
+    & > span.title {
+      font-size: 12px;
+      font-weight: 500;
+    }
+
+    & > span.content {
+      font-size: 14px;
+    }
+
+    gap: 15px;
   }
 `;
 
@@ -253,3 +262,4 @@ const ContentContainer = styled.div`
   background: #000;
   color: #fff;
 `;
+
