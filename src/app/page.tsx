@@ -3,7 +3,7 @@
 import styled from 'styled-components';
 import Image from 'next/image';
 import { useEffect, useState } from 'react';
-import { happiness_sans, pretendard } from '@/lib/fonts';
+import { happiness_sans } from '@/lib/fonts';
 
 export default function Home() {
   const [time, setTime] = useState('XX일 XX시간 XX분 XX초');
@@ -35,7 +35,12 @@ export default function Home() {
     <>
       <DesktopContainer>
         <Background />
-        <BackgroundVector fill={true} src="/bg.svg" alt="background" sizes="100vh" />
+        <BackgroundVector
+          fill={true}
+          src="/bg.svg"
+          alt="background"
+          sizes="100vh"
+        />
         <TopBottomContainer />
         <CenterContainer>
           <TitleArea>
@@ -45,14 +50,12 @@ export default function Home() {
             >
               제 1회 한국과학영재학교 아이디어톤
             </SubTitle>
-            <Title className={pretendard.className}>
+            <Title className={happiness_sans.className}>
               KSA Innovation Challenge
             </Title>
           </TitleArea>
           <CountdownArea>
-            <CountdownLabel className={happiness_sans.className}>
-              Application Form Open Countdown
-            </CountdownLabel>
+            <CountdownLabel>Application Form Open Countdown</CountdownLabel>
             <Countdown>{time}</Countdown>
           </CountdownArea>
           <Location>
@@ -122,7 +125,9 @@ export default function Home() {
             </TopBottomShortContainerLineTwo>
           </TopBottomShortContainerArea>
         </AreaArea>
-        <AuthorContainer>Copyright KIC 2024. All rights reserved.</AuthorContainer>
+        <AuthorContainer>
+          Copyright KIC 2024. All rights reserved.
+        </AuthorContainer>
       </DesktopContainer>
     </>
   );
@@ -195,12 +200,12 @@ const TopBottomShortContainerArea = styled.div`
 `;
 
 const AreaArea = styled.div`
-width: 70%;
-margin-bottom: 120px;
+  width: 70%;
+  margin-bottom: 120px;
 
-@media (max-width: 768px) {
-  width: 100%;
-}
+  @media (max-width: 768px) {
+    width: 100%;
+  }
 `;
 
 const TopBottomShortContainer = styled.div`
@@ -234,7 +239,7 @@ const Association = styled.div`
 
   @media (max-width: 768px) {
     gap: 15px;
-    }
+  }
 
   & > span {
     font-size: 16px;
@@ -251,8 +256,8 @@ const Association = styled.div`
       font-weight: 500;
 
       @media (max-width: 768px) {
-      font-size: 14px;
-    }
+        font-size: 14px;
+      }
     }
   }
 `;
@@ -273,7 +278,7 @@ const TitleArea = styled.div`
 const SubTitle = styled.span`
   font-size: 24px;
   font-style: normal;
-  font-weight: 600;
+  font-weight: 500;
 
   @media (max-width: 768px) {
     font-size: 12px;
@@ -283,7 +288,7 @@ const SubTitle = styled.span`
 const Title = styled.span`
   font-size: 40px;
   font-style: normal;
-  font-weight: 600;
+  font-weight: 500;
   padding-left: 20px;
   padding-right: 20px;
 
@@ -315,7 +320,7 @@ const CountdownLabel = styled.span`
 const Countdown = styled.span`
   text-align: center;
   font-style: normal;
-  font-weight: 600;
+  font-weight: 500;
   margin-top: 10px;
 
   @media (min-width: 1250px) {
@@ -337,7 +342,7 @@ const Location = styled.span`
   margin-bottom: 40px;
 
   & > span {
-    font-weight: 600;
+    font-weight: 500;
   }
 
   @media (max-width: 1250px) {
