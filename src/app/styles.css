@@ -1,4 +1,6 @@
 html,
 body {
-  overscroll-behavior: none;  
+  overscroll-behavior: none; 
+  text-rendering: optimizeLegibility;
+  transform: perspective(1px); 
 }
