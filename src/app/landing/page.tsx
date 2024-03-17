@@ -58,11 +58,10 @@ export default function LandingPage() {
             <span className="title">주최</span>
             <AssociationLogo>
               <Image
-                src="/ksa.svg"
+                src="/ksa-black.svg"
                 alt="KSA Logo"
                 width="114"
                 height="30"
-                style={{ fill: 'black' }}
               />
             </AssociationLogo>
           </AssocationContainer>
@@ -74,18 +73,16 @@ export default function LandingPage() {
             <span className="title">후원</span>
             <AssociationLogo>
               <Image
-                src="/kaist.svg"
+                src="/kaist-black.svg"
                 alt="KAIST Logo"
                 width="85"
                 height="24"
-                style={{ fill: 'black' }}
               />
               <Image
-                src="/ict.svg"
+                src="/ict-black.svg"
                 alt="과학기술정보통신부 Logo"
                 width="124"
                 height="24"
-                style={{ fill: 'black' }}
               />
             </AssociationLogo>
           </AssocationContainer>
