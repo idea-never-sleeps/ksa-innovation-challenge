@@ -164,19 +164,21 @@ const RootContainer = styled.div<{ $scroll: boolean }>`
 `;
 
 const TopContainer = styled.div`
+  z-index: 100;
   box-sizing: border-box;
+  position: fixed;
+  top: 0;
   height: 100vh;
-  height: 100svh !important;
+  height: 100lvh !important;
   width: 100vw;
   color: #000;
   background: #fff;
 `;
 
 const TopContent = styled.div`
-  z-index: 100;
   box-sizing: border-box;
   height: 100vh;
-  height: 100svh !important;
+  height: 100lvh !important;
   width: 100vw;
   display: flex;
   flex-direction: column;
@@ -236,6 +238,10 @@ const AssociationLogo = styled.div`
 `;
 
 const ContentContainer = styled.div`
+  z-index: 101;
+  position: relative;
+  margin-top: 100vh;
+  margin-top: 100lvh !important;
   padding: 20px;
   background: #000;
   color: #fff;
