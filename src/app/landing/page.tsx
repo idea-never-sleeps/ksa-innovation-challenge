@@ -196,6 +196,10 @@ const TopTitle = styled.div`
   font-weight: 600;
   font-size: 30px;
   text-align: right;
+
+  @media (max-width: 768px) {
+    transform: scale(0.3);
+  }
 `;
 
 const BottomContainer = styled.div`
@@ -227,6 +231,9 @@ const AssocationContainer = styled.div`
 
   & > span.content {
     font-size: 20px;
+  }
+  @media (max-width: 768px) {
+    transform: scale(0.6);
   }
 `;
 
