@@ -48,22 +48,15 @@ export default function LandingPage() {
       return;
     }
 
-    let decrementInterval: NodeJS.Timeout | null = null;
-    let decrement = 3; // Initial decrement value
+    let value = 1000;
+    const interval = setInterval(() => {
+      setPercentage((prev) => prev + value);
+      value *= 0.9;
+      if (value < 0.1) {
+        clearInterval(interval);
+      }
+    }, 1000 / 60);
 
-    const decrementPercentage = () => {
-      setPercentage((prev) => {
-        const newPercentage = prev - decrement;
-        if (newPercentage <= 0) {
-          clearInterval(decrementInterval!);
-          return 0;
-        }
-        decrement *= 0.6; // Decrease the decrement value exponentially
-        return newPercentage;
-      });
-    };
-
-    decrementInterval = setInterval(decrementPercentage, 16.67); // Approximately 60 frames per second
   }, [percentage]);
 
   useEffect(() => {
