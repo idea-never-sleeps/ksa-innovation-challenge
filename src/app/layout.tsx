@@ -1,9 +1,8 @@
-import type { Metadata } from 'next';
+import type { Metadata, Viewport } from 'next';
 import { wanted_sans } from '@/lib/fonts';
 import StyledComponentsRegistry from '@/lib/registry';
 import './styles.css'
 import 'normalize.css/normalize.css';
-import Head from 'next/head';
 
 export const metadata: Metadata = {
   title: 'KSA Innovation Challenge 2024',
@@ -26,6 +25,10 @@ export const metadata: Metadata = {
   }
 };
 
+export const viewport: Viewport = {
+  themeColor: '#000000',
+}
+
 export default function RootLayout({
   children
 }: Readonly<{
@@ -33,9 +36,6 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="ko">
-      <Head>
-        <meta property="theme-color" content="#000000" />
-      </Head>
       <body className={wanted_sans.className} style={{ margin: 0, padding: 0 }}>
         <StyledComponentsRegistry>{children}</StyledComponentsRegistry>
       </body>
