@@ -36,7 +36,7 @@ export default function LandingPage() {
         return;
       }
       if (wheelDelta < e.touches[0].clientY && e.touches[0].clientY > 0) {
-        setPercentage((prev) => prev + 350);
+        setPercentage((prev) => prev + 180);
       }
       setWheelDelta(e.touches[0].clientY);
     },
