@@ -8,25 +8,39 @@ import LandingImage from './image';
 export default function LandingPage() {
   const [percentage, setPercentage] = useState(0);
   const [wheelDelta, setWheelDelta] = useState(0);
+  const [scroll, setScroll] = useState(false);
+  const contentRef = useRef<HTMLDivElement>(null);
 
   const handleWheel = useCallback(
     (e: WheelEvent) => {
+      if (percentage > 100000) {
+        setTimeout(() => {
+          setScroll(true);
+        }, 300);
+        return;
+      }
       if (wheelDelta < e.deltaY && e.deltaY > 0) {
         setPercentage((prev) => prev + 60);
       }
       setWheelDelta(e.deltaY);
     },
-    [wheelDelta]
+    [wheelDelta, percentage]
   );
 
   const handleTouch = useCallback(
     (e: TouchEvent) => {
+      if (percentage > 100000) {
+        setTimeout(() => {
+          setScroll(true);
+        }, 300);
+        return;
+      }
       if (wheelDelta < e.touches[0].clientY && e.touches[0].clientY > 0) {
         setPercentage((prev) => prev + 350);
       }
       setWheelDelta(e.touches[0].clientY);
     },
-    [wheelDelta]
+    [wheelDelta, percentage]
   );
 
   useEffect(() => {
@@ -41,63 +55,110 @@ export default function LandingPage() {
   }, [handleWheel, handleTouch]);
 
   return (
-    <RootContainer>
+    <RootContainer $scroll={scroll}>
       <TopContainer>
-        <TopTitle>
-          KSA
-          <br />
-          Innovation
-          <br />
-          Challenge
-        </TopTitle>
-        <div style={{ position: 'relative', height: '600px', width: '100vw' }}>
-          <LandingImage percentage={percentage} />
-        </div>
-        <BottomContainer>
-          <AssocationContainer>
-            <span className="title">주최</span>
-            <AssociationLogo>
-              <Image
-                src="/ksa-black.svg"
-                alt="KSA Logo"
-                width="114"
-                height="30"
-              />
-            </AssociationLogo>
-          </AssocationContainer>
-          <AssocationContainer>
-            <span className="title">주관</span>
-            <span className="content">2024 KIC 추진위원단</span>
-          </AssocationContainer>
-          <AssocationContainer>
-            <span className="title">후원</span>
-            <AssociationLogo>
-              <Image
-                src="/kaist-black.svg"
-                alt="KAIST Logo"
-                width="85"
-                height="24"
-              />
-              <Image
-                src="/ict-black.svg"
-                alt="과학기술정보통신부 Logo"
-                width="124"
-                height="24"
-              />
-            </AssociationLogo>
-          </AssocationContainer>
-        </BottomContainer>
+        <TopContent>
+          <TopTitle>
+            KSA
+            <br />
+            Innovation
+            <br />
+            Challenge
+          </TopTitle>
+          <div
+            style={{ position: 'relative', height: '600px', width: '100vw' }}
+          >
+            <LandingImage percentage={percentage} />
+          </div>
+          <BottomContainer>
+            <AssocationContainer>
+              <span className="title">주최</span>
+              <AssociationLogo>
+                <Image
+                  src="/ksa-black.svg"
+                  alt="KSA Logo"
+                  width="114"
+                  height="30"
+                />
+              </AssociationLogo>
+            </AssocationContainer>
+            <AssocationContainer>
+              <span className="title">주관</span>
+              <span className="content">2024 KIC 추진위원단</span>
+            </AssocationContainer>
+            <AssocationContainer>
+              <span className="title">후원</span>
+              <AssociationLogo>
+                <Image
+                  src="/kaist-black.svg"
+                  alt="KAIST Logo"
+                  width="85"
+                  height="24"
+                />
+                <Image
+                  src="/ict-black.svg"
+                  alt="과학기술정보통신부 Logo"
+                  width="124"
+                  height="24"
+                />
+              </AssociationLogo>
+            </AssocationContainer>
+          </BottomContainer>
+        </TopContent>
       </TopContainer>
-      {percentage > 90000 && (
-        <ContentContainer>
-          <h1>Scroll down to see more</h1>
-        </ContentContainer>
-      )}
+      <ContentContainer ref={contentRef}>
+        <h1>Scroll down to see more</h1>
+        <h1>Scroll down to see more</h1>
+        <h1>Scroll down to see more</h1>
+        <h1>Scroll down to see more</h1>
+        <h1>Scroll down to see more</h1>
+        <h1>Scroll down to see more</h1>
+        <h1>Scroll down to see more</h1>
+        <h1>Scroll down to see more</h1>
+        <h1>Scroll down to see more</h1>
+        <h1>Scroll down to see more</h1>
+        <h1>Scroll down to see more</h1>
+        <h1>Scroll down to see more</h1>
+        <h1>Scroll down to see more</h1>
+        <h1>Scroll down to see more</h1>
+        <h1>Scroll down to see more</h1>
+        <h1>Scroll down to see more</h1>
+        <h1>Scroll down to see more</h1>
+        <h1>Scroll down to see more</h1>
+        <h1>Scroll down to see more</h1>
+        <h1>Scroll down to see more</h1>
+        <h1>Scroll down to see more</h1>
+        <h1>Scroll down to see more</h1>
+        <h1>Scroll down to see more</h1>
+        <h1>Scroll down to see more</h1>
+        <h1>Scroll down to see more</h1>
+        <h1>Scroll down to see more</h1>
+        <h1>Scroll down to see more</h1>
+        <h1>Scroll down to see more</h1>
+        <h1>Scroll down to see more</h1>
+        <h1>Scroll down to see more</h1>
+        <h1>Scroll down to see more</h1>
+        <h1>Scroll down to see more</h1>
+        <h1>Scroll down to see more</h1>
+        <h1>Scroll down to see more</h1>
+        <h1>Scroll down to see more</h1>
+        <h1>Scroll down to see more</h1>
+        <h1>Scroll down to see more</h1>
+        <h1>Scroll down to see more</h1>
+        <h1>Scroll down to see more</h1>
+        <h1>Scroll down to see more</h1>
+        <h1>Scroll down to see more</h1>
+        <h1>Scroll down to see more</h1>
+        <h1>Scroll down to see more</h1>
+        <h1>Scroll down to see more</h1>
+      </ContentContainer>
     </RootContainer>
   );
 }
 
-const RootContainer = styled.div`
+const RootContainer = styled.div<{ $scroll: boolean }>`
+  overflow: hidden;
+  height: ${({ $scroll }) => ($scroll ? 'auto' : '100dvh')};
   position: relative;
   overflow: hidden;
 `;
@@ -107,12 +168,21 @@ const TopContainer = styled.div`
   height: 100vh;
   height: 100svh !important;
   width: 100vw;
-  position: relative;
   color: #000;
   background: #fff;
+`;
+
+const TopContent = styled.div`
+  z-index: 100;
+  box-sizing: border-box;
+  height: 100vh;
+  height: 100svh !important;
+  width: 100vw;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
+  position: relative;
 `;
 
 const TopTitle = styled.div`
@@ -168,4 +238,5 @@ const AssociationLogo = styled.div`
 const ContentContainer = styled.div`
   padding: 20px;
   background: #000;
+  color: #fff;
 `;
