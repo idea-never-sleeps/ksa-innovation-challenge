@@ -48,31 +48,22 @@ export default function LandingPage() {
       return;
     }
   
-    let animationFrameId: number | null = null;
-    let lastTimestamp = performance.now();
-    let initialVelocity = 0;
+    let decrementInterval: NodeJS.Timeout | null = null;
+    let decrement = 10; // Initial decrement value
   
-    const animateDeceleration = (timestamp: number) => {
-      const deltaTime = timestamp - lastTimestamp;
-      lastTimestamp = timestamp;
-  
-      // Calculate velocity based on deltaTime and initial velocity
-      initialVelocity -= initialVelocity * deltaTime * 0.001; // Adjust the deceleration factor as needed
-  
-      // Update percentage based on velocity
-      setPercentage((prev) => prev + initialVelocity);
-  
-      // Check if the velocity is close to zero
-      if (Math.abs(initialVelocity) < 0.1) {
-        cancelAnimationFrame(animationFrameId!);
-        return;
-      }
-  
-      // Request the next animation frame
-      animationFrameId = requestAnimationFrame(animateDeceleration);
+    const decrementPercentage = () => {
+      setPercentage((prev) => {
+        const newPercentage = prev - decrement;
+        if (newPercentage <= 0) {
+          clearInterval(decrementInterval!);
+          return 0;
+        }
+        decrement *= 0.9; // Decrease the decrement value exponentially
+        return newPercentage;
+      });
     };
   
-    animateDeceleration(performance.now());
+    decrementInterval = setInterval(decrementPercentage, 16.67); // Approximately 60 frames per second
   }, [percentage]);
   
 
