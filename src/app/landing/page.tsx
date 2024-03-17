@@ -169,7 +169,7 @@ const TopContainer = styled.div`
   position: fixed;
   top: 0;
   height: 100vh;
-  height: 100lvh !important;
+  height: 100dvh !important;
   width: 100vw;
   color: #000;
   background: #fff;
@@ -178,7 +178,7 @@ const TopContainer = styled.div`
 const TopContent = styled.div`
   box-sizing: border-box;
   height: 100vh;
-  height: 100lvh !important;
+  height: 100dvh !important;
   width: 100vw;
   display: flex;
   flex-direction: column;
@@ -241,7 +241,7 @@ const ContentContainer = styled.div`
   z-index: 101;
   position: relative;
   margin-top: 100vh;
-  margin-top: 100lvh !important;
+  margin-top: 100dvh !important;
   padding: 20px;
   background: #000;
   color: #fff;
