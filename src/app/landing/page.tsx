@@ -22,7 +22,7 @@ export default function LandingPage() {
   const handleTouch = useCallback(
     (e: TouchEvent) => {
       if (wheelDelta < e.touches[0].clientY && e.touches[0].clientY > 0) {
-        setPercentage((prev) => prev + 60);
+        setPercentage((prev) => prev + 350);
       }
       setWheelDelta(e.touches[0].clientY);
     },
