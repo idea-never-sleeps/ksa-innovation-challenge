@@ -130,7 +130,9 @@ const BottomContainer = styled.div`
   box-sizing: border-box;
   width: 100vw;
   max-width: 1200px;
-  margin-bottom: 100px;
+  padding-left: 20px;
+  padding-right: 20px;
+  margin-bottom: 60px;
   display: flex;
   position: absolute;
   bottom: 0;
