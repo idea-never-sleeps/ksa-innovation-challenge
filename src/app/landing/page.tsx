@@ -51,7 +51,7 @@ export default function LandingPage() {
       let changeRate = wheelDelta - e.touches[0].clientY;
       if (recentTime + timeLimit > new Date().getTime()) {
         if (changeRate > 0) {
-          setPercentage((prev) => prev + changeRate * 12);
+          setPercentage((prev) => prev + changeRate * 18);
         }
         setWheelDelta(e.touches[0].clientY);
       }
