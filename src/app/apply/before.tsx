@@ -72,7 +72,7 @@ export default function BeforePage() {
             </Association>
             <Association>
               <span>주관</span>
-              <span className="content">2024 KIC 조직위원회</span>
+              <span className="content">2024 KIC 추진단</span>
             </Association>
             <Association>
               <span>후원</span>
@@ -100,7 +100,7 @@ export default function BeforePage() {
               </Association>
               <Association>
                 <span>주관</span>
-                <span className="content">2024 KIC 조직위원회</span>
+                <span className="content">2024 KIC 추진단</span>
               </Association>
             </TopBottomShortContainer>
             <TopBottomShortContainerLineTwo>

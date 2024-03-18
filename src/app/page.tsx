@@ -132,7 +132,7 @@ export default function LandingPage() {
             </AssocationContainer>
             <AssocationContainer>
               <span className="title">주관</span>
-              <span className="content">2024 KIC 추진위원단</span>
+              <span className="content">2024 KIC 추진단</span>
             </AssocationContainer>
             <AssocationContainer>
               <span className="title">후원</span>
@@ -357,7 +357,7 @@ export default function LandingPage() {
               </AssocationContainer>
               <AssocationContainer>
                 <span className="title">주관</span>
-                <span className="content">2024 KIC 추진위원단</span>
+                <span className="content">2024 KIC 추진단</span>
               </AssocationContainer>
               <AssocationContainer>
                 <span className="title">후원</span>
