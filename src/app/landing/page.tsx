@@ -194,7 +194,7 @@ export default function LandingPage() {
             <SectionContent>피자, 치킨 제공</SectionContent>
           </div>
         </Section>
-        <Section>
+        <Section style={{ marginBottom: '100px' }}>
           <SectionTitle style={{ textAlign: 'center', lineHeight: '1.8' }}>
             KIC,
             <br />
