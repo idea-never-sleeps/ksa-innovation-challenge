@@ -20,7 +20,7 @@ export default function Timer() {
       if (diff < 0) {
         const diff2 = missiontwoEnd.getTime() - now.getTime();
         if (diff2 < 0) {
-          setLeftTime('Mission 2 종료');
+          setLeftTime('모든 미션이 종료되었습니다!');
         } else {
           const hours = Math.floor(diff2 / (1000 * 60 * 60));
           const minutes = Math.floor((diff2 % (1000 * 60 * 60)) / (1000 * 60));
