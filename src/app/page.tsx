@@ -318,6 +318,8 @@ export default function LandingPage() {
               21 백동주
               <br />
               22 임우진
+              <br/>
+              22 이승준
               <br />
               <br />
               <br />
