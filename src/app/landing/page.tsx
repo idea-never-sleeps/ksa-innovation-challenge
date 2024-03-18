@@ -404,9 +404,6 @@ const Section = styled.div`
   position: relative;
   padding: 20px;
 
-  min-height: 100vh;
-  min-height: 100dvh !important;
-
   @media (max-width: 768px) {
     margin-bottom: 150px;
   }

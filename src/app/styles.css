@@ -1,4 +1,7 @@
 html,
 body {
   overscroll-behavior: none; 
+  /* font smoothubng*/
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
