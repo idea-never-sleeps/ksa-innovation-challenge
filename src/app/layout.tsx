@@ -6,12 +6,12 @@ import 'normalize.css/normalize.css';
 
 export const metadata: Metadata = {
   title: 'KSA Innovation Challenge 2024',
-  description: 'KIC, Where passion meets purpose.',
+  description: 'Idea Never Sleeps.',
   metadataBase: new URL('https://innovation-challenge.cloud.algorix.io'),
   openGraph: {
     siteName: 'KSA Innovation Challenge 2024',
     title: 'KSA Innovation Challenge 2024',
-    description: 'KIC, Where passion meets purpose.',
+    description: 'Idea Never Sleeps.',
     type: 'website',
     url: 'https://innovation-challenge.cloud.algorix.io',
     images: [

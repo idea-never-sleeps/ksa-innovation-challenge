@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useState } from 'react';
 
 export default function LandingImage({ percentage }: { percentage: number }) {
   const [realPercentage, setRealPercentage] = useState(9722);
