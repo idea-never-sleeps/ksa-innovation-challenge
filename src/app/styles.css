@@ -3,6 +3,6 @@ body {
   overscroll-behavior: none; 
   letter-spacing: -4%;
   /* font smoothubng*/
-  -webkit-font-smoothing: antialiased;
+  -webkit-font-smoothing: subpixel-antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
