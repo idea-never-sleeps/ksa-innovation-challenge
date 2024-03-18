@@ -286,7 +286,7 @@ export default function LandingPage() {
 
 const MainContainer = styled.div`
   height: 100vh;
-  height: 100dvh !important;
+  height: 100svh !important;
   overflow-y: scroll;
   position: relative;
   letter-spacing: -4%;
@@ -294,7 +294,7 @@ const MainContainer = styled.div`
 
 const RootContainer = styled.div<{ $scroll: boolean }>`
   overflow: hidden;
-  height: ${({ $scroll }) => ($scroll ? 'auto' : '100dvh')};
+  height: ${({ $scroll }) => ($scroll ? 'auto' : '100svh')};
   position: relative;
 `;
 
@@ -403,6 +403,9 @@ const Section = styled.div`
   margin-bottom: 200px;
   position: relative;
   padding: 20px;
+
+  min-height: 100vh;
+  min-height: 100dvh !important;
 
   @media (max-width: 768px) {
     margin-bottom: 150px;
