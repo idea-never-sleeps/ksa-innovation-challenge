@@ -1,8 +1,9 @@
 import ApplyClientPage from "./open";
 import BeforePage from "./before";
 import { redirect } from "next/navigation";
+import { Metadata } from "next";
 
-export function generateMetaData() {
+export async function generateMetadata(): Promise<Metadata> {
   const now = new Date();
   const target = new Date('2024-04-01T00:00:00+09:00');
   const end = new Date('2024-04-06T00:00:00+09:00');
