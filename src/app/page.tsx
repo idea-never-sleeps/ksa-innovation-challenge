@@ -30,7 +30,7 @@ function RealApplyButton() {
   return (
     <ApplyButton className="disable">
       <Calendar />
-      <span>4월 1일부터 신청 가능해요.</span>
+      <span>4월 1일부터 신청 가능합니다.</span>
     </ApplyButton>
   );
 }
