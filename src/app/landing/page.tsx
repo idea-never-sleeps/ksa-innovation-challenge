@@ -9,6 +9,8 @@ export default function LandingPage() {
   const [percentage, setPercentage] = useState(0);
   const [wheelDelta, setWheelDelta] = useState(0);
   const [scroll, setScroll] = useState(false);
+  const timeLimit = 100;
+  const [recentTime, setRecentTime] = useState(new Date().getTime());
   const contentRef = useRef<HTMLDivElement>(null);
 
   const handleWheel = useCallback(
@@ -19,12 +21,19 @@ export default function LandingPage() {
         }, 300);
         return;
       }
-      if (wheelDelta < e.deltaY && e.deltaY > 0) {
-        setPercentage((prev) => prev + 60);
+      let changeRate = e.deltaY - wheelDelta;
+      if (recentTime + timeLimit > new Date().getTime()) {
+        if (changeRate > 0) {
+          setPercentage((prev) => prev + changeRate * 12);
+        }
+        if (changeRate < 0 && e.deltaY > 0) {
+          setPercentage((prev) => prev + Math.abs(changeRate) * 10);
+        }
+        setWheelDelta(e.deltaY);
       }
-      setWheelDelta(e.deltaY);
+      setRecentTime(new Date().getTime());
     },
-    [wheelDelta, percentage]
+    [wheelDelta, percentage, recentTime]
   );
 
   const handleTouch = useCallback(
@@ -35,42 +44,33 @@ export default function LandingPage() {
         }, 300);
         return;
       }
-      if (wheelDelta < e.touches[0].clientY && e.touches[0].clientY > 0) {
-        setPercentage((prev) => prev + 180);
+      if (wheelDelta === 0) {
+        setWheelDelta(e.touches[0].clientY);
+        return;
       }
-      setWheelDelta(e.touches[0].clientY);
+      let changeRate = wheelDelta - e.touches[0].clientY;
+      if (recentTime + timeLimit > new Date().getTime()) {
+        if (changeRate > 0) {
+          setPercentage((prev) => prev + changeRate * 8);
+        }
+        setWheelDelta(e.touches[0].clientY);
+      }
+      setRecentTime(new Date().getTime());
     },
-    [wheelDelta, percentage]
+    [wheelDelta, percentage, recentTime]
   );
-
-  const handleTouchEnd = useCallback(() => {
-    if (percentage > 100000) {
-      return;
-    }
-
-    let value = 1000;
-    const interval = setInterval(() => {
-      setPercentage((prev) => prev + value);
-      value *= 0.9;
-      if (value < 0.1) {
-        clearInterval(interval);
-      }
-    }, 1000 / 60);
-
-  }, [percentage]);
 
   useEffect(() => {
     window.addEventListener('wheel', (e) => handleWheel(e as WheelEvent));
     window.addEventListener('touchmove', (e) => handleTouch(e as TouchEvent));
-    window.addEventListener('touchend', handleTouchEnd);
+
     return () => {
       window.removeEventListener('wheel', (e) => handleWheel(e as WheelEvent));
       window.removeEventListener('touchmove', (e) =>
         handleTouch(e as TouchEvent)
       );
-      window.removeEventListener('touchend', handleTouchEnd);
     };
-  }, [handleWheel, handleTouch, handleTouchEnd]);
+  }, [handleWheel, handleTouch]);
 
   return (
     <RootContainer $scroll={scroll}>
@@ -288,7 +288,6 @@ const RootContainer = styled.div<{ $scroll: boolean }>`
   overflow: hidden;
   height: ${({ $scroll }) => ($scroll ? 'auto' : '100dvh')};
   position: relative;
-  overflow: hidden;
 `;
 
 const TopContainer = styled.div`
