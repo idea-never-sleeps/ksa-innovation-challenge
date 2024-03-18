@@ -158,20 +158,20 @@ export default function LandingPage() {
           }}
         >
           <SectionTitle>시상</SectionTitle>
-          <div style={{ marginTop: '70px' }}>
+          <AwardContainer>
             <SectionLabel>1위</SectionLabel>
-            <SectionContent>KSA 학교장상 + 10만원 상당 상품</SectionContent>
-          </div>
-          <div style={{ marginTop: '70px' }}>
+            <SectionContent style={{textAlign: 'center'}}>KSA 학교장상 + 10만원 상당 상품</SectionContent>
+          </AwardContainer>
+          <AwardContainer>
             <SectionLabel>2위</SectionLabel>
-            <SectionContent>
+            <SectionContent style={{textAlign: 'center'}}>
               KSA 화학생물학부 학부장상 + 5만원 상당 상품
             </SectionContent>
-          </div>
-          <div style={{ marginTop: '70px' }}>
+          </AwardContainer>
+          <AwardContainer>
             <SectionLabel>베스트 팀워크 상</SectionLabel>
-            <SectionContent>5만원 상당 상품</SectionContent>
-          </div>
+            <SectionContent style={{textAlign: 'center'}}>5만원 상당 상품</SectionContent>
+          </AwardContainer>
         </Section>
         <Section
           style={{
@@ -181,18 +181,18 @@ export default function LandingPage() {
           }}
         >
           <SectionTitle>참가자 특전</SectionTitle>
-          <div style={{ marginTop: '70px' }}>
+          <AwardContainer>
             <SectionLabel>웰컴 키트</SectionLabel>
             <SectionContent>반팔 티셔츠, 스티커, 기타 굿즈</SectionContent>
-          </div>
-          <div style={{ marginTop: '70px' }}>
+          </AwardContainer>
+          <AwardContainer>
             <SectionLabel>다과</SectionLabel>
             <SectionContent>무제한 몬스터, 탄산음료, 커피, 과자</SectionContent>
-          </div>
-          <div style={{ marginTop: '70px' }}>
+          </AwardContainer>
+          <AwardContainer>
             <SectionLabel>간식</SectionLabel>
             <SectionContent>피자, 치킨 제공</SectionContent>
-          </div>
+          </AwardContainer>
         </Section>
         <Section style={{ marginBottom: '100px' }}>
           <SectionTitle style={{ textAlign: 'center', lineHeight: '1.8' }}>
@@ -283,6 +283,14 @@ export default function LandingPage() {
     </RootContainer>
   );
 }
+
+const MainContainer = styled.div`
+  height: 100vh;
+  height: 100dvh !important;
+  overflow-y: scroll;
+  position: relative;
+  letter-spacing: -4%;
+`;
 
 const RootContainer = styled.div<{ $scroll: boolean }>`
   overflow: hidden;
@@ -395,12 +403,20 @@ const Section = styled.div`
   margin-bottom: 200px;
   position: relative;
   padding: 20px;
+
+  @media (max-width: 768px) {
+    margin-bottom: 150px;
+  }
 `;
 
 const SectionTitle = styled.div`
   font-size: 40px;
   font-weight: 600;
   margin-bottom: 25px;
+
+  @media (max-width: 768px) {
+    font-size: 22px;
+  }
 `;
 
 const SectionContent = styled.div`
@@ -412,6 +428,10 @@ const SectionContent = styled.div`
   & > strong {
     font-weight: 600;
   }
+
+  @media (max-width: 768px) {
+    font-size: 16px;
+  }
 `;
 
 const SectionLabel = styled.div`
@@ -420,18 +440,31 @@ const SectionLabel = styled.div`
   margin-bottom: 10px;
   display: flex;
   justify-content: center;
+
+  @media (max-width: 768px) {
+    font-size: 14px;
+  }
 `;
 
 const Footer = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 160px;
+  gap: 120px;
+
+  @media (max-width: 768px) {
+    gap: 80px;
+  }
 `;
 
 const FooterTitle = styled.div`
   font-size: 40px;
   font-weight: 600;
+  text-align: center;
+
+  @media (max-width: 768px) {
+    font-size: 22px;
+  }
 `;
 
 const ContactContainer = styled.div`
@@ -447,6 +480,11 @@ const Contact = styled.div`
   gap: 30px;
   font-size: 18px;
   font-weight: 400;
+
+  @media (max-width: 768px) {
+    gap: 15px;
+    font-size: 14px;
+  }
 `;
 
 const FooterAssociationContainer = styled.div`
@@ -454,6 +492,7 @@ const FooterAssociationContainer = styled.div`
   gap: 20px;
   box-sizing: border-box;
   width: 100vw;
+  flex-wrap: wrap;
   max-width: 1200px;
   padding-left: 20px;
   padding-right: 20px;
@@ -468,4 +507,12 @@ const FooterLink = styled.a`
   cursor: pointer;
   font-size: 18px;
   font-weight: 400;
+`;
+
+const AwardContainer = styled(Section)`
+  margin-bottom: 70px;
+
+  @media (max-width: 768px) {
+    margin-bottom: 40px;
+  }
 `;
