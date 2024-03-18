@@ -308,7 +308,7 @@ export default function LandingPage() {
                 textAlign: 'center'
               }}
             >
-              <strong>KIC 조직위원단 드림.</strong>
+              <strong>KIC 추진위원단 드림.</strong>
               <br />
               <br />
               22 권오윤
