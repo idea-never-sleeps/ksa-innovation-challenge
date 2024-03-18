@@ -285,7 +285,7 @@ export default function LandingPage() {
             </div>
           </Section>
           <Section style={{ marginBottom: '40px' }}>
-            <SectionTitle style={{ textAlign: 'center', lineHeight: '1.8' }}>
+            <SectionTitle style={{ textAlign: 'center', lineHeight: '1.6' }}>
               KIC,
               <br />
               Where Passion
@@ -505,14 +505,14 @@ const ContentContainerContainer = styled.div`
   margin-top: 100svh !important;
   display: flex;
   justify-content: center;
-  background: #1e1e1e;
+  background: #000000;
 `;
 
 const ContentContainer = styled.div`
   z-index: 101;
   position: relative;
   padding: 20px;
-  background: #1e1e1e;
+  background: #000000;
   color: #fff;
   max-width: 1000px;
 `;
@@ -544,6 +544,9 @@ const SectionContent = styled.div`
 
   &.big {
     font-size: 28px;
+    @media (max-width: 768px) {
+    font-size: 20px;
+  }
   }
 
   @media (max-width: 768px) {
@@ -568,7 +571,7 @@ const SectionLabel = styled.div`
 `;
 
 const Section = styled.div`
-  background: #1e1e1e;
+  background: #000000;
   margin-bottom: 200px;
   position: relative;
   padding: 20px;
