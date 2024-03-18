@@ -39,7 +39,6 @@ const Container = styled.div`
   height: 100svh;
   overflow-y: scroll;
   line-height: 1.5;
-  letter-spacing: -4%;
 `;
 
 const BackgroundColor = styled.div`

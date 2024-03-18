@@ -145,7 +145,6 @@ const DesktopContainer = styled.div`
   flex-direction: column;
   justify-content: space-around;
   align-items: center;
-  letter-spacing: -4%;
 `;
 
 const Background = styled.div`

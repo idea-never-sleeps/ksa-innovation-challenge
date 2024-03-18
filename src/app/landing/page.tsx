@@ -73,10 +73,8 @@ export default function LandingPage() {
   }, [handleWheel, handleTouch]);
 
   return (
-    <MainContainer>
       <RootContainer
         $scroll={scroll}
-        $height={contentRef.current?.offsetHeight || 0}
       >
         <TopContainer>
           <TopContent>
@@ -298,19 +296,11 @@ export default function LandingPage() {
           </ContentContainer>
         </ContentContainerContainer>
       </RootContainer>
-    </MainContainer>
   );
 }
 
-const MainContainer = styled.div`
-  height: 100vh;
-  height: 100svh !important;
-  overflow-y: scroll;
-  letter-spacing: -4%;
-`;
-
-const RootContainer = styled.div<{ $scroll: boolean; $height: number }>`
-  height: ${({ $scroll, $height }) => ($scroll ? `calc(100svh + ${$height}px)` : '100svh')};
+const RootContainer = styled.div<{ $scroll: boolean }>`
+  height: ${({ $scroll }) => ($scroll ? `auto` : '100svh')};
   overflow: hidden;
   position: relative;
 `;
