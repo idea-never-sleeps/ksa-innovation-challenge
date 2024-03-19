@@ -3,7 +3,6 @@
 import styled from 'styled-components';
 import Image from 'next/image';
 import { useEffect, useState } from 'react';
-import { happiness_sans } from '@/lib/fonts';
 
 export default function BeforePage() {
   const [time, setTime] = useState('XX일 XX시간 XX분 XX초');
@@ -45,12 +44,14 @@ export default function BeforePage() {
         <CenterContainer>
           <TitleArea>
             <SubTitle
-              className={happiness_sans.className}
-              style={{ marginBottom: '11px' }}
+              style={{
+                marginBottom: '11px',
+                fontFamily: 'Happiness-Sans-Title'
+              }}
             >
               제 1회 한국과학영재학교 아이디어톤
             </SubTitle>
-            <Title className={happiness_sans.className}>
+            <Title style={{ fontFamily: 'Happiness-Sans-Title' }}>
               KSA Innovation Challenge
             </Title>
           </TitleArea>

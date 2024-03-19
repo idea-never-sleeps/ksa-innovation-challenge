@@ -1,5 +1,4 @@
 import type { Metadata, Viewport } from 'next';
-import { wanted_sans } from '@/lib/fonts';
 import StyledComponentsRegistry from '@/lib/registry';
 import './styles.css';
 import 'normalize.css/normalize.css';
@@ -37,7 +36,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="ko">
-      <body className={wanted_sans.className} style={{ margin: 0, padding: 0 }}>
+      <body style={{ margin: 0, padding: 0 }}>
         <StyledComponentsRegistry>{children}</StyledComponentsRegistry>
         <GoogleAnalytics gaId="G-S7W58FGP2P" />
       </body>
