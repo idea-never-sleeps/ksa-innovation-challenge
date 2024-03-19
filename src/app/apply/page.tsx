@@ -17,7 +17,7 @@ export async function generateMetadata(): Promise<Metadata> {
         title: 'KSA Innovation Challenge 2024',
         description: 'Idea Never Sleeps.',
         type: 'website',
-        url: process.env.BASE_URL || 'https://kic2024.org',
+        url: process.env.DEPLOY_URL || 'https://kic2024.org',
         images: [
           {
             url: '/og.png',
@@ -39,7 +39,7 @@ export async function generateMetadata(): Promise<Metadata> {
         title: '신청하기 - KSA Innovation Challenge 2024',
         description: 'KSA Innovation Challenge 2024에 참가하세요.',
         type: 'website',
-        url: `${process.env.BASE_URL}/apply` || 'https://kic2024.org/apply',
+        url: `${process.env.DEPLOY_URL}/apply` || 'https://kic2024.org/apply',
         images: [
           {
             url: '/og.png',
@@ -59,7 +59,7 @@ export async function generateMetadata(): Promise<Metadata> {
         title: 'Countdown - KSA Innovation Challenge 2024',
         description: 'Idea Never Sleeps.',
         type: 'website',
-        url: `${process.env.BASE_URL}/apply` || 'https://kic2024.org/apply',
+        url: `${process.env.DEPLOY_URL}/apply` || 'https://kic2024.org/apply',
         images: [
           {
             url: '/og.png',

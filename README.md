@@ -4,7 +4,7 @@
 
 ## ENV
 
-- BASE_URL
+- DEPLOY_URL
 
 ## Getting Started
 
