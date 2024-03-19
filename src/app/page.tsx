@@ -34,7 +34,7 @@ function RealApplyButton() {
     <Link href="/apply" style={{ textDecoration: 'none' }}>
       <ApplyButton>
         <Calendar />
-        <span>4월 1일부터 신청 가능합니다. (카운트다운 보러가기)</span>
+        <span>Countdown (4월 1일부터 신청 가능)</span>
       </ApplyButton>
     </Link>
   );
