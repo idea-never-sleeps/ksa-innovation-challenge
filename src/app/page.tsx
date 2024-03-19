@@ -426,25 +426,6 @@ export default function LandingPage() {
                 </AssociationLogo>
               </AssocationContainer>
             </FooterAssociationContainer>
-            <FooterEnd>
-              <span>2024 Copyright KIC 2024. All rights reserved.</span>
-              <div
-                style={{ display: 'flex', flexDirection: 'row', gap: '5px' }}
-              >
-                <a href="https://github.com/idea-never-sleeps/ksa-innovation-challenge">
-                  ksa-innovation-challenge
-                </a>
-                <span> {' @ '}</span>
-                <a
-                  href={
-                    'https://github.com/idea-never-sleeps/ksa-innovation-challenge/commit' +
-                    process.env.NEXT_PUBLIC_COMMIT_REF
-                  }
-                >
-                  {process.env.NEXT_PUBLIC_COMMIT_REF || '000000'}
-                </a>
-              </div>
-            </FooterEnd>
           </Footer>
         </ContentContainer>
       </ContentContainerContainer>
@@ -788,20 +769,6 @@ const FooterLink = styled.a`
 
   @media (max-width: 768px) {
     font-size: 12px;
-  }
-`;
-
-const FooterEnd = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  font-size: 14px;
-  gap: 15px;
-  color: #fff;
-
-  & > div >a {
-    color: #fff;
-    text-decoration: underline;
   }
 `;
 
