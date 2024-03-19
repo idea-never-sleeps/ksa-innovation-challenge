@@ -273,14 +273,49 @@ export default function LandingPage() {
               </SectionLabel>
               <ScheduleContainer>
                 <ScheduleItem>
-                  <span className="title">5월 4일 (토)</span>
+                  <span className="title">5월 4일 (금) Day 1</span>
                   <span className="withtime">
-                    <span className="time">18:00 ~ 18:30</span>
-                    오프닝
+                    <span className="time">18:00</span>
+                    개회
                   </span>
                   <span className="withtime">
-                    <span className="time">19:00 ~ 20:30</span>
-                    저녁
+                    <span className="time">18:00 ~ 18:30</span>
+                    오프닝 및 졸업생 특강
+                  </span>
+                  <span className="withtime">
+                    <span className="time">18:30 ~</span>
+                    주제 발표 및 팀별 프로젝트 진행
+                  </span>
+                  <span className="withtime">
+                    <span className="time">24:00</span>
+                    Mission 01 제출
+                  </span>
+                </ScheduleItem>
+                <ScheduleItem>
+                  <span className="title">5월 5일 (토) Day 2</span>
+                  <span className="withtime">
+                    <span className="time">01:00</span>
+                    야식 제공
+                  </span>
+                  <span className="withtime">
+                    <span className="time">01:00 ~ </span>
+                    팀별 프로젝트 진행
+                  </span>
+                  <span className="withtime">
+                    <span className="time">8:00</span>
+                    Mission 02 제출
+                  </span>
+                  <span className="withtime">
+                    <span className="time">18:00</span>
+                    최종 발표 및 모의 투자
+                  </span>
+                  <span className="withtime">
+                    <span className="time">19:00</span>
+                    시상식
+                  </span>
+                  <span className="withtime">
+                    <span className="time">19:30</span>
+                    폐회
                   </span>
                 </ScheduleItem>
               </ScheduleContainer>
@@ -544,8 +579,10 @@ const ContentContainer = styled.div`
 `;
 
 const ScheduleItem = styled.div`
+  width: 380px;
   display: flex;
   flex-direction: column;
+  gap: 10px;
 `;
 
 const SectionTitle = styled.div`
@@ -682,7 +719,7 @@ const ScheduleContainer = styled.div`
   display: flex;
   flex-wrap: wrap;
   flex-direction: row;
-  align-items: center;
+  align-items: start;
   justify-content: center;
   padding: 20px;
   gap: 80px;
