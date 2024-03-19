@@ -2,6 +2,7 @@ import ApplyClientPage from './open';
 import BeforePage from './before';
 import { redirect } from 'next/navigation';
 import { Metadata } from 'next';
+import getUrl from '@/lib/get-url';
 
 export async function generateMetadata(): Promise<Metadata> {
   const now = new Date();
@@ -17,7 +18,7 @@ export async function generateMetadata(): Promise<Metadata> {
         title: 'KSA Innovation Challenge 2024',
         description: 'Idea Never Sleeps.',
         type: 'website',
-        url: process.env.DEPLOY_URL || 'https://kic2024.org',
+        url: getUrl(),
         images: [
           {
             url: '/og.png',
@@ -39,7 +40,7 @@ export async function generateMetadata(): Promise<Metadata> {
         title: '신청하기 - KSA Innovation Challenge 2024',
         description: 'KSA Innovation Challenge 2024에 참가하세요.',
         type: 'website',
-        url: `${process.env.DEPLOY_URL}/apply` || 'https://kic2024.org/apply',
+        url: `${getUrl()}/apply` || 'https://kic2024.org/apply',
         images: [
           {
             url: '/og.png',
@@ -59,7 +60,7 @@ export async function generateMetadata(): Promise<Metadata> {
         title: 'Countdown - KSA Innovation Challenge 2024',
         description: 'Idea Never Sleeps.',
         type: 'website',
-        url: `${process.env.DEPLOY_URL}/apply` || 'https://kic2024.org/apply',
+        url: `${getUrl()}/apply`,
         images: [
           {
             url: '/og.png',

@@ -438,10 +438,10 @@ export default function LandingPage() {
                 <a
                   href={
                     'https://github.com/idea-never-sleeps/ksa-innovation-challenge/commit' +
-                    process.env.COMMIT_REF
+                    process.env.NEXT_PUBLIC_COMMIT_REF
                   }
                 >
-                  {process.env.COMMIT_REF || '000000'}
+                  {process.env.NEXT_PUBLIC_COMMIT_REF || '000000'}
                 </a>
               </div>
             </FooterEnd>

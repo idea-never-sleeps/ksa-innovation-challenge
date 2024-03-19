@@ -4,17 +4,18 @@ import StyledComponentsRegistry from '@/lib/registry';
 import './styles.css';
 import 'normalize.css/normalize.css';
 import { GoogleAnalytics } from '@next/third-parties/google';
+import getUrl from '@/lib/get-url';
 
 export const metadata: Metadata = {
   title: 'KSA Innovation Challenge 2024',
   description: 'Idea Never Sleeps.',
-  metadataBase: new URL(process.env.DEPLOY_URL || 'https://kic2024.org'),
+  metadataBase: new URL(getUrl()),
   openGraph: {
     siteName: 'KSA Innovation Challenge 2024',
     title: 'KSA Innovation Challenge 2024',
     description: 'Idea Never Sleeps.',
     type: 'website',
-    url: process.env.DEPLOY_URL || 'https://kic2024.org',
+    url: getUrl(),
     images: [
       {
         url: '/og.png',
