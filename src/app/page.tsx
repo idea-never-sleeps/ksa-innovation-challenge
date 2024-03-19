@@ -576,6 +576,7 @@ const ContentContainer = styled.div`
   background: #000000;
   color: #fff;
   max-width: 1000px;
+  min-width: 100%;
 `;
 
 const ScheduleItem = styled.div`
