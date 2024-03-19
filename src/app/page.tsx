@@ -387,7 +387,7 @@ export default function LandingPage() {
               <Contact>
                 <span>카카오톡</span>
                 <span>
-                  22학번 권오윤 <a href="tel:+82-10-6650-4690">010-6650-4690</a>
+                  22학번 권오윤 <a href="tel:+82-10-6650-4690" style={{marginLeft: '10px'}}>010-6650-4690</a>
                 </span>
               </Contact>
             </ContactContainer>
@@ -426,6 +426,25 @@ export default function LandingPage() {
                 </AssociationLogo>
               </AssocationContainer>
             </FooterAssociationContainer>
+            <FooterEnd>
+              <span>2024 Copyright KIC 2024. All rights reserved.</span>
+              <div
+                style={{ display: 'flex', flexDirection: 'row', gap: '5px' }}
+              >
+                <a href="https://github.com/idea-never-sleeps/ksa-innovation-challenge">
+                  ksa-innovation-challenge
+                </a>
+                <span> {' @ '}</span>
+                <a
+                  href={
+                    'https://github.com/idea-never-sleeps/ksa-innovation-challenge/commit' +
+                    process.env.COMMIT_REF
+                  }
+                >
+                  {process.env.COMMIT_REF || '000000'}
+                </a>
+              </div>
+            </FooterEnd>
           </Footer>
         </ContentContainer>
       </ContentContainerContainer>
@@ -766,6 +785,24 @@ const FooterLink = styled.a`
   cursor: pointer;
   font-size: 18px;
   font-weight: 400;
+
+  @media (max-width: 768px) {
+    font-size: 12px;
+  }
+`;
+
+const FooterEnd = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 14px;
+  gap: 15px;
+  color: #fff;
+
+  & > div >a {
+    color: #fff;
+    text-decoration: underline;
+  }
 `;
 
 const AwardContainer = styled(Section)`
