@@ -1,7 +1,7 @@
-import ApplyClientPage from "./open";
-import BeforePage from "./before";
-import { redirect } from "next/navigation";
-import { Metadata } from "next";
+import ApplyClientPage from './open';
+import BeforePage from './before';
+import { redirect } from 'next/navigation';
+import { Metadata } from 'next';
 
 export async function generateMetadata(): Promise<Metadata> {
   const now = new Date();

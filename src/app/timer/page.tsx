@@ -52,7 +52,7 @@ export default function Timer() {
         <Image src="/white.svg" alt="logo" width="480" height="400" />
       </TopContainer>
       <div>
-        <span className='clock'>{time}</span>
+        <span className="clock">{time}</span>
         <br />
         <span>{leftTime}</span>
       </div>
@@ -79,7 +79,6 @@ const Container = styled.div`
   color: #fff;
 
   & > div {
-
     display: flex;
     flex-direction: column;
     align-items: center;

@@ -5,6 +5,7 @@ import styled from 'styled-components';
 import Image from 'next/image';
 import LandingImage from './image';
 import { ArrowRight, Calendar, Hourglass } from 'lucide-react';
+import Link from 'next/link';
 
 function RealApplyButton() {
   const [now] = useState(new Date());
@@ -21,17 +22,21 @@ function RealApplyButton() {
   }
   if (now.getTime() >= target.getTime()) {
     return (
-      <ApplyButton>
-        <ArrowRight />
-        <span>지금 신청하기</span>
-      </ApplyButton>
+      <Link href="/apply" style={{ textDecoration: 'none' }}>
+        <ApplyButton>
+          <ArrowRight />
+          <span>지금 신청하기</span>
+        </ApplyButton>
+      </Link>
     );
   }
   return (
-    <ApplyButton className="disable">
-      <Calendar />
-      <span>4월 1일부터 신청 가능합니다.</span>
-    </ApplyButton>
+    <Link href="/apply" style={{ textDecoration: 'none' }}>
+      <ApplyButton>
+        <Calendar />
+        <span>4월 1일부터 신청 가능합니다. (카운트다운 보러가기)</span>
+      </ApplyButton>
+    </Link>
   );
 }
 
@@ -106,6 +111,15 @@ export default function LandingPage() {
     <RootContainer $scroll={scroll}>
       <TopContainer>
         <TopContent>
+          <TopNetlifyBadge>
+            <a href="https://www.netlify.com">
+              <Image
+                src="/netlify-color-accent.svg"
+                alt="Deploys by Netlify"
+                fill
+              />
+            </a>
+          </TopNetlifyBadge>
           <TopTitle>
             KSA
             <br />
@@ -318,7 +332,7 @@ export default function LandingPage() {
               21 백동주
               <br />
               22 임우진
-              <br/>
+              <br />
               22 이승준
               <br />
               <br />
@@ -427,6 +441,16 @@ const TopTitle = styled.div`
   @media (max-width: 768px) {
     font-size: 14px;
   }
+`;
+
+const TopNetlifyBadge = styled.div`
+  position: absolute;
+  top: 0;
+  left: 0;
+  margin-top: 20px;
+  margin-left: 20px;
+  width: 114px;
+  height: 50px;
 `;
 
 const BottomContainer = styled.div`
@@ -547,8 +571,8 @@ const SectionContent = styled.div`
   &.big {
     font-size: 28px;
     @media (max-width: 768px) {
-    font-size: 20px;
-  }
+      font-size: 20px;
+    }
   }
 
   @media (max-width: 768px) {

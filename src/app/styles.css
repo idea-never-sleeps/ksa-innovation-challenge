@@ -1,6 +1,6 @@
 html,
 body {
-  overscroll-behavior: none; 
+  overscroll-behavior: none;
   letter-spacing: -4%;
   /* font smoothubng*/
   -webkit-font-smoothing: subpixel-antialiased;
