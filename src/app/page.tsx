@@ -44,7 +44,7 @@ export default function LandingPage() {
   const [percentage, setPercentage] = useState(0);
   const [wheelDelta, setWheelDelta] = useState(0);
   const [scroll, setScroll] = useState(false);
-  const timeLimit = 50;
+  const timeLimit = 100;
   const [recentTime, setRecentTime] = useState(new Date().getTime());
   const contentRef = useRef<HTMLDivElement>(null);
 
@@ -54,6 +54,9 @@ export default function LandingPage() {
         setTimeout(() => {
           setScroll(true);
         }, 300);
+        return;
+      }
+      if (e.deltaY < 0) {
         return;
       }
       let changeRate = e.deltaY - wheelDelta;
