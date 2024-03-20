@@ -56,13 +56,16 @@ export default function LandingPage() {
         }, 300);
         return;
       }
+      if (e.deltaY < 0) {
+        return;
+      }
       let changeRate = e.deltaY - wheelDelta;
       if (recentTime + timeLimit > new Date().getTime()) {
         if (changeRate > 0) {
-          setPercentage((prev) => prev + changeRate * 12);
+          setPercentage((prev) => prev + changeRate * 28);
         }
         if (changeRate < 0 && e.deltaY > 0) {
-          setPercentage((prev) => prev + Math.abs(changeRate) * 10);
+          setPercentage((prev) => prev + Math.abs(changeRate) * 20);
         }
         setWheelDelta(e.deltaY);
       }
@@ -86,7 +89,7 @@ export default function LandingPage() {
       let changeRate = wheelDelta - e.touches[0].clientY;
       if (recentTime + timeLimit > new Date().getTime()) {
         if (changeRate > 0) {
-          setPercentage((prev) => prev + changeRate * 18);
+          setPercentage((prev) => prev + changeRate * 30);
         }
         setWheelDelta(e.touches[0].clientY);
       }
