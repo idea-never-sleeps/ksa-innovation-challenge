@@ -44,7 +44,7 @@ export default function LandingPage() {
   const [percentage, setPercentage] = useState(0);
   const [wheelDelta, setWheelDelta] = useState(0);
   const [scroll, setScroll] = useState(false);
-  const timeLimit = 100;
+  const timeLimit = 50;
   const [recentTime, setRecentTime] = useState(new Date().getTime());
   const contentRef = useRef<HTMLDivElement>(null);
 
